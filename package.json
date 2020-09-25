@@ -1,7 +1,7 @@
 {
   "name": "header-codam",
   "main": "./lib/header-codam",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "Add the CODAM header to your project files",
   "keywords": [
     "CODAM",
