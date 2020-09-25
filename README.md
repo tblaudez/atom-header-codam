@@ -7,4 +7,4 @@ You can trigger it with the `cmd-alt-h` shortcut.
 supported header formats are:
 `#`, `/* */`, `<!-- -->`, `[[ ]]`, `(* *)`, `{- -}`, `;`
 
-![CODAM header in action](https://imgur.com/X49mGIB)
+![CODAM header in action](https://i.imgur.com/X49mGIB.png)
