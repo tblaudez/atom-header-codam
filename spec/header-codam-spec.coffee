@@ -1,40 +1,40 @@
-Header42 = require '../lib/header-42'
+HeaderCodam = require '../lib/header-codam'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "Header42", ->
+describe "HeaderCodam", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('header-42')
+    activationPromise = atom.packages.activatePackage('header-codam')
 
-  describe "when the header-42:insert event is triggered", ->
+  describe "when the header-codam:insert event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.header-42')).not.toExist()
+      expect(workspaceElement.querySelector('.header-codam')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'header-42:insert'
+      atom.commands.dispatch workspaceElement, 'header-codam:insert'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.header-42')).toExist()
+        expect(workspaceElement.querySelector('.header-codam')).toExist()
 
-        # header42Element = workspaceElement.querySelector('.header-42')
-        # expect(header42Element).toExist()
+        # headerCodamElement = workspaceElement.querySelector('.header-codam')
+        # expect(headerCodamElement).toExist()
         #
-        # header42Panel = atom.workspace.panelForItem(header42Element)
-        # expect(header42Panel.isVisible()).toBe true
-        # atom.commands.dispatch workspaceElement, 'header-42:insert'
-        # expect(header42Panel.isVisible()).toBe false
+        # headerCodamPanel = atom.workspace.panelForItem(headerCodamElement)
+        # expect(headerCodamPanel.isVisible()).toBe true
+        # atom.commands.dispatch workspaceElement, 'header-codam:insert'
+        # expect(headerCodamPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
       # This test shows you an integration test testing at the view level.
@@ -45,18 +45,18 @@ describe "Header42", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.header-42')).not.toExist()
+      expect(workspaceElement.querySelector('.header-codam')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'header-42:insert'
+      atom.commands.dispatch workspaceElement, 'header-codam:insert'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        header42Element = workspaceElement.querySelector('.header-42')
-        expect(header42Element).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'header-42:insert'
-        expect(header42Element).not.toBeVisible()
+        headerCodamElement = workspaceElement.querySelector('.header-codam')
+        expect(headerCodamElement).toBeVisible()
+        atom.commands.dispatch workspaceElement, 'header-codam:insert'
+        expect(headerCodamElement).not.toBeVisible()
